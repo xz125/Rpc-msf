@@ -39,7 +39,7 @@ RPC 框架包含三个最重要的组件，分别是客户端、服务端和注�
 - 2.服务提供者需要依赖 `rpc-server-spring-boot-starter`。
   这样基本就可以了，因为使用了spring boot自动配置，所以消费者和提供者启动的时候都会去加载starter里的spring.factories文件，会自动将需要的bean自动装配到IOC容器中。
 - 3.注册中心使用ZK
-- 4.消费者和服务提供者需要配置注册中心的地址（默认127.0.0.1:2181）以及服务启动端口，服务提供者还需要配置RPC监听端口。
+- 4.消费者和服务提供者需要配置注册中心的地址（默认127.0.0.1:2181）(需要根据情况进行修改)以及服务启动端口，服务提供者还需要配置RPC监听端口。
 
 ## 发布服务和消费服务
 
@@ -191,7 +191,7 @@ TCP 传输协议是面向流的，没有数据包界限，也就是说消息无�
 使用的是 消息长度 + 消息内容 的形式。在解码器 RpcDecoder 中读取固定长度数据。
 
 5.序列化和反序列化  
-序列化和反序列化在 `rpc-core` 模块 `com.rrtv.rpc.core.serialization` 包下，提供了 `HessianSerialization` 和 `JsonSerialization` 序列化。  
+序列化和反序列化在 `rpc-core` 模块 `com.msf.core.serialization` 包下，提供了 `HessianSerialization` 和 `JsonSerialization` 序列化。  
 默认使用 `HessianSerialization` 序列化。用户不可以自定义。
 
 ```
