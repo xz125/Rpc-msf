@@ -272,10 +272,10 @@ bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class)
     4. RpcServerProvider.run 方法会开启一个 netty 服务  
 
 服务消费者启动  
-  1.服务消费者 consumer 会依赖 rpc-client-spring-boot-starter  
-  2.ConsumerApplication 启动，根据springboot 自动装配机制，RpcClientAutoConfiguration 自动配置生效    
-  3.将服务发现、负载均衡、代理等bean加入IOC容器  
-  4.后置处理器 RpcClientProcessor 会扫描 bean ,将被 @RpcAutowired 修饰的属性动态赋值为代理对象  
+    1.服务消费者 consumer 会依赖 rpc-client-spring-boot-starter  
+    2.ConsumerApplication 启动，根据springboot 自动装配机制，RpcClientAutoConfiguration 自动配置生效    
+    3.将服务发现、负载均衡、代理等bean加入IOC容器  
+    4.后置处理器 RpcClientProcessor 会扫描 bean ,将被 @RpcAutowired 修饰的属性动态赋值为代理对象  
 
 调用过程  
 
